@@ -3,10 +3,12 @@ package lv.artjoms.spaceshipmanagementsystem;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.provider.BaseColumns;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -88,5 +90,10 @@ public class WelcomeActivity extends AppCompatActivity {
 
         shipList.setAdapter(arrayAdapter);
 
+    }
+
+    public void createSpaceship(View view) {
+        Intent createNewSpaceship = new Intent(this, CreateOrEditSpaceship.class);
+        startActivity(createNewSpaceship);
     }
 }
