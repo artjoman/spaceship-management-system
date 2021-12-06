@@ -2,13 +2,14 @@ package lv.artjoms.spaceshipmanagementsystem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     EditText edit1, edit2;
     Button btn1;
@@ -16,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         edit1 = findViewById(R.id.username);
         edit2 = findViewById(R.id.password);
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Username or password are empty", Toast.LENGTH_LONG).show();
         } else if ( username.equals("Artjoms") && password.equals("qwerty")) {
             Toast.makeText(this, "login was succesful", Toast.LENGTH_LONG).show();
+            Intent welcome = new Intent(this, WelcomeActivity.class);
+            startActivity(welcome);
         } else {
             Toast.makeText(this, "Username or Password is incorrect", Toast.LENGTH_LONG).show();
         }
